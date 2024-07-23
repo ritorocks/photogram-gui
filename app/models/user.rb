@@ -17,6 +17,7 @@ class User < ApplicationRecord
     :uniqueness => { :case_sensitive => false },
   })
 
+  # My Comments
   def comments
     my_id = self.id
 
@@ -24,7 +25,7 @@ class User < ApplicationRecord
 
     return matching_comments
   end
-
+  # Photos that I own
   def own_photos
     my_id = self.id
 
