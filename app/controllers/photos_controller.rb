@@ -29,4 +29,18 @@ class PhotosController < ApplicationController
 
     redirect_to("/photos")
   end
+
+  def update
+    image_url = params.fetch("input_image")
+    image_caption = params.fetch("input_caption")
+    image_owner_id = params.fetch("input_owner_id")
+  
+    p = Photo.new
+    p.image = image_url
+    p.caption = image_caption
+    p.owner_id = image_owner_id
+
+    p.save
+    redirect_to("/photos/" + p.id.to_s)
+  end
 end
