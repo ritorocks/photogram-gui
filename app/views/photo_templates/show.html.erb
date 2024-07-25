@@ -37,10 +37,10 @@
   <dd>
     <form action="/update_photo/<%= @my_photo.id %>" method="post">
       <label for="browser_image">Image</label>
-      <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value=https://robohash.org/modieumvoluptate.png?size=300x300&amp;set=set1>
+      <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value="<%= @my_photo.image %>">
 
       <label for="browser_caption">Caption</label>
-      <textarea id="browser_caption" name="input_caption" placeholder="Enter a caption for the photo...">When the snows fall and the white winds blow, the lone wolf dies but the pack survives.</textarea>
+      <textarea id="browser_caption" name="input_caption" placeholder="Enter a caption for the photo..."><%= @my_photo.caption %></textarea>
 
       <button>Update photo</button>
     </form>
@@ -93,7 +93,7 @@
 
 <form action="/add_comment" method="post">
   <label for="browser_photo_id">Photo ID</label>
-  <input id="browser_photo_id" type=text placeholder="Enter the photo ID" name="input_photo_id" value=785>
+  <input id="browser_photo_id" type=text placeholder="Enter the photo ID" name="input_photo_id" value="<%=@my_photo.id%>">
 
   <label for="browser_author_id">Author ID</label>
   <input id="browser_author_id" type=text placeholder="Enter your author ID" name="input_author_id">
